@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pakhi_shop/description/detail_screen.dart';
 import 'package:pakhi_shop/home/home_screen.dart';
 
 void main() {
