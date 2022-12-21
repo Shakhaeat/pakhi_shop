@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
@@ -10,6 +8,16 @@ class DetailScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.grey,
+        onPressed: () {},
+        label: const Text('Add To Cart'),
+        icon: const Icon(Icons.shopping_cart),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -222,6 +230,118 @@ class DetailScreen extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                'Photo Album',
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    const Spacer(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.orange[50],
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://dainiksangbad.com/wp-content/uploads/2021/08/93359375_thinkstockphotos-455661271.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.orange[50],
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://c-fa.cdn.smule.com/rs-s77/arr/61/da/e4967298-ee4c-4a9f-a520-19af0a04d485_1024.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.orange[50],
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://dainiksangbad.com/wp-content/uploads/2021/08/93359375_thinkstockphotos-455661271.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    const Spacer(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.orange[50],
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://c-fa.cdn.smule.com/rs-s77/arr/61/da/e4967298-ee4c-4a9f-a520-19af0a04d485_1024.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.orange[50],
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://dainiksangbad.com/wp-content/uploads/2021/08/93359375_thinkstockphotos-455661271.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.orange[50],
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://c-fa.cdn.smule.com/rs-s77/arr/61/da/e4967298-ee4c-4a9f-a520-19af0a04d485_1024.jpg'),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+              ],
             ),
           ],
         ),

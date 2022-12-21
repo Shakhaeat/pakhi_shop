@@ -57,13 +57,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: const DetailScreen(),
-        // HomeScreen(
-        //     deshipakhiImage: deshipakhiImage,
-        //     deshipakhiTag: deshipakhiTag,
-        //     deshipakhiName: deshipakhiName,
-        //     dsehipakhiDate: dsehipakhiDate,
-        //     ),
+        body: HomeScreen(
+          deshipakhiImage: deshipakhiImage,
+          deshipakhiTag: deshipakhiTag,
+          deshipakhiName: deshipakhiName,
+          dsehipakhiDate: dsehipakhiDate,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           items: [

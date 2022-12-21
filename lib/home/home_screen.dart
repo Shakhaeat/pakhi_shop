@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pakhi_shop/description/detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -118,80 +119,90 @@ class HomeScreen extends StatelessWidget {
                   itemCount: deshipakhiImage.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 160,
-                      width: 150,
-                      margin: const EdgeInsets.only(left: 10),
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                blurRadius: 12,
-                                offset: const Offset(0, 3),
-                                color: Colors.grey.withOpacity(0.1)),
-                          ]),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
+                    return GestureDetector(
+                      onTap: (() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DetailScreen(),
+                          ),
+                        );
+                      }),
+                      child: Container(
+                        height: 160,
+                        width: 150,
+                        margin: const EdgeInsets.only(left: 10),
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            child: Image.network(
-                              deshipakhiImage[
-                                  index], //Deshi Pakhi image from deshipakhiImage list
-                              fit: BoxFit.cover,
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 3),
+                                  color: Colors.grey.withOpacity(0.1)),
+                            ]),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                deshipakhiImage[
+                                    index], //Deshi Pakhi image from deshipakhiImage list
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                height: 15,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Colors.orange[100],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    deshipakhiTag[index],
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                      color: Colors.orange[500],
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  height: 15,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: Colors.orange[100],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      deshipakhiTag[index],
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                        color: Colors.orange[500],
+                                      ),
                                     ),
                                   ),
                                 ),
+                                const Spacer(),
+                                const Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.red,
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              deshipakhiName[index],
+                              style: const TextStyle(
+                                fontSize: 15,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
                               ),
-                              const Spacer(),
-                              const Icon(
-                                Icons.favorite_border,
-                                color: Colors.red,
-                              )
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            deshipakhiName[index],
-                            style: const TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold,
                             ),
-                          ),
-                          Text(
-                            dsehipakhiDate[index],
-                            style: const TextStyle(
-                              fontSize: 10,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold,
+                            Text(
+                              dsehipakhiDate[index],
+                              style: const TextStyle(
+                                fontSize: 10,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   }),
